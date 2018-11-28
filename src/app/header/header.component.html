@@ -1,0 +1,12 @@
+<div class="header" *ngIf="!!user">
+  <div class="links">
+    <a routerLinkActive="active" routerLink="user/posts">Posts</a>
+    <a routerLinkActive="active" routerLink="user/albums">Albums</a>
+    <a routerLinkActive="active" routerLink="user/todos">To dos</a>
+  </div>
+  <div class="user">
+    <a href="user.email">{{user.name}}</a>
+    <span>({{user.company.name}})</span>
+    <button (click)="logout()">logout</button>
+  </div>
+</div>

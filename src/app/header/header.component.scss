@@ -1,0 +1,15 @@
+.header {
+  padding: 1rem;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  a{
+    color: #ffffff;
+    margin: 1rem;
+    text-decoration: none;
+    &.active{
+      color: yellow;
+    }
+  }
+}
