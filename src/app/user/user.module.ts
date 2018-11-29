@@ -6,15 +6,18 @@ import { PostsComponent } from './posts/posts.component';
 import { TodosComponent } from './todos/todos.component';
 import { AlbumsComponent } from './albums/albums.component';
 import {PostService} from './posts/post.service';
+import {TodosService} from './todos/todos.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [PostsComponent, TodosComponent, AlbumsComponent],
   imports: [
+    FormsModule,
     CommonModule,
     UserRoutingModule
   ],
   providers: [
-    PostService
+    PostService, TodosService
   ]
 })
 export class UserModule { }

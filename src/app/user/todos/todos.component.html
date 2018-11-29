@@ -1,3 +1,9 @@
-<p>
-  todos works!
-</p>
+<input type="checkbox" [(ngModel)]="check" (change)="filterCompleted(check)">
+
+<div class="todosList">
+  <ul>
+    <li *ngFor="let todo of todos;trackBy:trackByFn">
+      <label><input disabled type="checkbox" [checked]="todo.completed">{{todo.title}}</label>
+    </li>
+  </ul>
+</div>
