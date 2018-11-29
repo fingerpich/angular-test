@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should not display header before login', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to angular-test!');
+    expect(page.getHeader()).toBeFalsy();
   });
 });
