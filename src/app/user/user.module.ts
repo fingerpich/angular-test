@@ -8,6 +8,7 @@ import { AlbumsComponent } from './albums/albums.component';
 import {PostService} from './posts/post.service';
 import {TodosService} from './todos/todos.service';
 import {FormsModule} from '@angular/forms';
+import {AlbumsService} from './albums/albums.service';
 
 @NgModule({
   declarations: [PostsComponent, TodosComponent, AlbumsComponent],
@@ -17,7 +18,7 @@ import {FormsModule} from '@angular/forms';
     UserRoutingModule
   ],
   providers: [
-    PostService, TodosService
+    PostService, TodosService, AlbumsService
   ]
 })
 export class UserModule { }
