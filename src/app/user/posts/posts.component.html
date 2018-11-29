@@ -1,3 +1,13 @@
-<p>
-  posts works!
-</p>
+<form>
+  <input (input)="filterPosts($event.target.value)">
+</form>
+
+<div class="Posts">
+  <ul>
+    <li *ngFor="let post of posts;trackBy:trackByFn"  (click)="togglePost(post)">
+      <h1>{{post.title}}</h1>
+      <span *ngIf="post.comments">{{post.comments.length}}</span>
+      <p [class]="post.expanded ? 'expand' : 'collapse'">{{post.body}}</p>
+    </li>
+  </ul>
+</div>

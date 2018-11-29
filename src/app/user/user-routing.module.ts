@@ -6,7 +6,7 @@ import {PostsComponent} from './posts/posts.component';
 import {TodosComponent} from './todos/todos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'albums'},
+  { path: '', redirectTo: 'posts'},
   { path: 'albums', component: AlbumsComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'todos', component: TodosComponent },
