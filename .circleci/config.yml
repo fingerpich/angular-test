@@ -14,4 +14,4 @@ jobs:
         paths:
         - "node_modules"
     - run: npm run test -- --no-progress --browsers=ChromeHeadlessCI --watch=false
-    - run: npm run e2e -- --no-progress --configuration=protractor-ci.conf.js
+    - run: npm run e2e

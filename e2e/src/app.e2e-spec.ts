@@ -7,8 +7,15 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should not display header before login', () => {
+  it('should display the app', () => {
     page.navigateTo();
-    expect(page.getHeader()).toBeFalsy();
+    expect(page.getRoot()).toBeTruthy();
+  });
+
+  it('should go login page at first', () => {
+    page.navigateTo();
+    page.getUrl().then((url) => {
+      expect(url).toContain('/login');
+    });
   });
 });

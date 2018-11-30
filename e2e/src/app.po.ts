@@ -5,7 +5,14 @@ export class AppPage {
     return browser.get('/');
   }
 
+  getUrl() {
+    return browser.getCurrentUrl();
+  }
+
+  getRoot() {
+    return element(by.css('app-root'));
+  }
   getHeader() {
-    return element(by.css('app-root app-haeder'));
+    return element(by.css('app-header div.header'));
   }
 }

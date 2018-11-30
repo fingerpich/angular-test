@@ -28,4 +28,22 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('submit should be disabled when input is empty', async(() => {
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(true);
+
+      component.email = 'me';
+      fixture.detectChanges();
+      expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(true);
+    });
+  }));
+  it('submit is available when input is valid', async(() => {
+    component.email = 'me@gmail.com';
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(false);
+    });
+  }));
 });

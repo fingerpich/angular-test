@@ -1,5 +1,5 @@
 <form (ngSubmit)="loginSubmit($event)" #loginForm="ngForm">
-  <input [(ngModel)]="email" name="email" required
-         placeholder="email address" type="email">
-  <button [disabled]="!loginForm.form.valid" type="submit">Login</button>
+  <input [(ngModel)]="email" name="email" required placeholder="email address" type="email" #formEmail="ngModel">
+  <div [hidden]="formEmail.valid || formEmail.pristine" class="alert alert-danger">Email is required</div>
+  <button [disabled]="!loginForm.valid" type="submit">Login</button>
 </form>

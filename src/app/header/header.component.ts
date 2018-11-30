@@ -10,6 +10,7 @@ import {User} from '../user/user';
 export class HeaderComponent implements OnInit {
 
   user: User;
+  onEditButtonClick: Function;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {

@@ -1,6 +1,8 @@
 # AngularTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+Project is placed in [fingerpich.github.io/angular-test](https://fingerpich.github.io/angular-test/)
+
+[![CircleCI](https://circleci.com/gh/fingerpich/angular-test.svg?style=svg)](https://circleci.com/gh/fingerpich/angular-test)
 
 ## Development server
 
