@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {FormsModule} from '@angular/forms';
 import {
+  MatCardModule,
   MatExpansionModule,
   MatIconModule, MatListModule,
   MatSlideToggleModule,
@@ -19,7 +20,7 @@ describe('TodosComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ TodosComponent ],
       imports: [ HttpClientModule, RouterTestingModule, FormsModule,
-        BrowserAnimationsModule, MatIconModule, MatSlideToggleModule, MatListModule
+        BrowserAnimationsModule, MatIconModule, MatSlideToggleModule, MatListModule, MatCardModule
       ],
     })
     .compileComponents();

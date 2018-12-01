@@ -1,10 +1,18 @@
-<!--<input type="checkbox" [(ngModel)]="check" (change)="filterCompleted(check)">-->
+<div class="control-list">
+  <H1>Todos</H1>
+  <mat-slide-toggle [(ngModel)]="check" (change)="filterCompleted(check)">Completed</mat-slide-toggle>
+</div>
 
-<mat-slide-toggle [(ngModel)]="check" (change)="filterCompleted(check)">Completed</mat-slide-toggle>
-
-<mat-list role="list">
-  <mat-list-item role="listitem" *ngFor="let todo of todos;trackBy:trackByFn">
-    <mat-icon>{{todo.completed ? 'done' : ''}}</mat-icon>
-    {{todo.title}}
-  </mat-list-item>
-</mat-list>
+<mat-card>
+  <mat-card-title>
+    {{check? 'Completed' : 'All'}} todos
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let todo of todos;trackBy:trackByFn">
+        <mat-icon>{{todo.completed ? 'done' : ''}}</mat-icon>
+        {{todo.title}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

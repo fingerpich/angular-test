@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed} from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 import {AuthService} from '../auth/auth.service';
@@ -32,17 +32,19 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('submit should be disabled when input is empty', async(() => {
+  it('submit should be disabled when input is empty', fakeAsync(() => {
     fixture.whenStable().then(() => {
+      component.ngOnInit();
+      component.email = '';
       fixture.detectChanges();
-      expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(true);
-
-      component.email = 'me';
-      fixture.detectChanges();
-      expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(true);
+      fixture.whenStable().then(() => {
+        component.email = '';
+        fixture.detectChanges();
+        expect(fixture.debugElement.nativeElement.querySelector('button').disabled).toBe(true);
+      });
     });
   }));
-  it('submit is available when input is valid', async(() => {
+  it('submit is available when input is valid', fakeAsync(() => {
     component.email = 'me@gmail.com';
     fixture.detectChanges();
     fixture.whenStable().then(() => {

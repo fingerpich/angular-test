@@ -1,0 +1,19 @@
+@import '../../../variables';
+
+.control-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem 1rem 1rem;
+  h1{
+    color: $primary;
+  }
+}
+
+mat-card{
+  max-width: 800px;
+  margin: auto;
+  mat-card-title{
+    color: $primary;
+  }
+}

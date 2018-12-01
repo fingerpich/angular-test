@@ -1,12 +1,51 @@
-.centered{
+@import '../../../variables';
+
+.control-list{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 1rem;
+  h1{
+    color: $primary;
+    //margin: 1rem 0;
+  }
   .searchForm{
     max-width: 400px;
     width: 100%;
-    padding: 2rem 0;
   }
+}
+.centered{
+  display: flex;
+  justify-content: center;
+
 }
 .full-width{
   width: 100%;
+}
+
+.post-list{
+  width: 800px;
+  margin: auto;
+  mat-panel-description{
+    flex-grow: 0;
+  }
+
+
+}
+/deep/ .accordion-item .mat-content{
+  align-items: center;
+}
+
+.accordion-item{
+  &:not(.active){
+    h4{
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+  &.active{
+    h4{
+      color: $primary;
+    }
+  }
 }

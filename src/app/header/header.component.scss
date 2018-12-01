@@ -1,3 +1,44 @@
+@import '../../variables';
+
+:host{
+  color: lighten($primary, 20%);
+}
 .fill-remaining-space{
   flex: 1 1 auto;
+}
+a{
+  color: inherit;
+}
+.pages a {
+  margin: 0.5rem;
+  &.active{
+    text-decoration: none;
+  }
+}
+
+.userMenu{
+  a{
+    color: $primary;
+  }
+  padding: 0 1rem 1rem;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+
+.visible-small{
+  display: block;
+}
+.hidden-small{
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .visible-small{
+    display: none;
+  }
+  .hidden-small{
+    display: block;
+  }
+
 }

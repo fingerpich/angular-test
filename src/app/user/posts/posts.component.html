@@ -1,4 +1,5 @@
-<div class="centered">
+<div class="control-list">
+  <h1>Posts</h1>
   <form class="searchForm">
     <mat-form-field class="full-width">
       <input matInput placeholder="Search in posts" (input)="filterPosts($event.target.value)">
@@ -7,16 +8,18 @@
   </form>
 </div>
 
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let post of posts;trackBy:trackByFn">
-    <mat-expansion-panel-header (click)="togglePost(post)">
-      <mat-panel-title>
-        {{post.title}}
-      </mat-panel-title>
-      <mat-panel-description>
-        <span *ngIf="post.comments">comments: {{post.comments.length}}</span>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>{{post.body}}</p>
-  </mat-expansion-panel>
-</mat-accordion>
+<div class="post-list">
+  <mat-accordion>
+    <mat-expansion-panel class="accordion-item" [class.active]="post === selectedPost" *ngFor="let post of posts;trackBy:trackByFn">
+      <mat-expansion-panel-header (click)="togglePost(post)">
+        <mat-panel-title>
+          <h4>{{post.title}}</h4>
+        </mat-panel-title>
+        <mat-panel-description>
+          <span *ngIf="post.comments">comments:{{post.comments.length}}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{post.body}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

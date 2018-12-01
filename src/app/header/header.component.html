@@ -1,13 +1,27 @@
-<mat-toolbar *ngIf="!!user">
-  <div class="links">
+<mat-toolbar *ngIf="!!user" color="primary">
+  <div class="pages">
     <a routerLinkActive="active" routerLink="user/posts">Posts</a>
     <a routerLinkActive="active" routerLink="user/albums">Albums</a>
-    <a routerLinkActive="active" routerLink="user/todos">To dos</a>
+    <a routerLinkActive="active" routerLink="user/todos">Todos</a>
   </div>
   <div class="fill-remaining-space"></div>
-  <div class="user">
+
+  <button mat-icon-button [matMenuTriggerFor]="appMenu" class="visible-small">
+    <mat-icon>person</mat-icon>
+  </button>
+  <div class="user" class="hidden-small">
     <a class="userLink" [href]="'//'+user.website">{{user.name}}</a>
-    <span>({{user.company.name}})</span>
+    <small>({{user.company.name}})</small>
     <button mat-button="" class="logout" (click)="logout()">logout</button>
   </div>
+  <mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent let-name="user-menu">
+      <div class="userMenu">
+        <a [href]="'//'+user.website"><h3>{{user.name}}</h3></a>
+        <small>{{user.company.name}}</small>
+        <button mat-button="" class="" (click)="logout()">logout</button>
+      </div>
+    </ng-template>
+  </mat-menu>
+
 </mat-toolbar>

@@ -9,8 +9,9 @@ import {PostService} from './posts/post.service';
 import {TodosService} from './todos/todos.service';
 import {FormsModule} from '@angular/forms';
 import {AlbumsService} from './albums/albums.service';
+import { NgxImageGalleryModule } from 'ngx-image-gallery';
 import {
-  MatButtonModule, MatDialogModule,
+  MatButtonModule, MatCardModule, MatDialogModule,
   MatExpansionModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule,
@@ -18,18 +19,18 @@ import {
   MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
-import {PreviewComponent} from './albums/preview/preview.component';
 
 @NgModule({
-  declarations: [PostsComponent, TodosComponent, AlbumsComponent, PreviewComponent],
+  declarations: [PostsComponent, TodosComponent, AlbumsComponent],
   imports: [
     FormsModule,
     CommonModule,
     UserRoutingModule,
+    NgxImageGalleryModule,
     MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatExpansionModule, MatIconModule, MatSlideToggleModule,
-    MatListModule, MatSidenavModule, MatGridListModule, MatDialogModule
+    MatListModule, MatSidenavModule, MatGridListModule, MatCardModule
   ],
-  entryComponents: [PreviewComponent],
+  entryComponents: [],
   providers: [
     PostService, TodosService, AlbumsService
   ]

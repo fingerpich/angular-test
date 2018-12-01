@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
-  <mat-card-subtitle>enter your email to login</mat-card-subtitle>
+  <mat-card-subtitle>Enter one of <a href="https://jsonplaceholder.typicode.com/users">these fake users</a> email</mat-card-subtitle>
   <form (ngSubmit)="loginSubmit($event)" #loginForm="ngForm">
     <mat-card-content>
       <mat-form-field class="full-width">
@@ -8,7 +8,7 @@
         <mat-error *ngIf="emailEl.invalid">{{'You must enter an email'}}</mat-error>
       </mat-form-field>
       <div>
-        <button mat-raised-button [disabled]="!loginForm.valid" type="submit">Login</button>
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid" type="submit">Login</button>
       </div>
     </mat-card-content>
   </form>

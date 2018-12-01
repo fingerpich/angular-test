@@ -10,6 +10,7 @@ import {Post} from './post';
 export class PostsComponent implements OnInit {
   searchText: string;
   posts: Array<Post>;
+  selectedPost: Post;
 
   constructor(private postService: PostService) { }
 
@@ -25,6 +26,11 @@ export class PostsComponent implements OnInit {
   }
 
   togglePost(post: Post) {
+    if (this.selectedPost === post) {
+      this.selectedPost = null;
+      return;
+    }
+    this.selectedPost = post;
     if (!post.comments) {
       this.getComments(post);
     }

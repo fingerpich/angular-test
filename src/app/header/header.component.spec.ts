@@ -5,7 +5,7 @@ import {AuthService} from '../auth/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {User} from '../user/user';
-import {MatButtonModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('HeaderComponent', () => {
@@ -17,7 +17,7 @@ describe('HeaderComponent', () => {
       declarations: [ HeaderComponent ],
       providers: [ AuthService ],
       imports: [ HttpClientModule, RouterTestingModule,
-        BrowserAnimationsModule, MatToolbarModule, MatButtonModule]
+        BrowserAnimationsModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule]
     })
     .compileComponents();
   }));
@@ -37,7 +37,7 @@ describe('HeaderComponent', () => {
     component.user = ({name: 'me', email: 'me@testing', company: {name: 'testingCompany'}} as User);
     fixture.detectChanges();
     expect(fixture.debugElement.nativeElement.querySelector('a.userLink').textContent).toBe('me');
-    const logoutBtn = fixture.debugElement.nativeElement.querySelector('button');
+    const logoutBtn = fixture.debugElement.nativeElement.querySelector('button.logout');
     logoutBtn.click();
     fixture.whenStable().then(() => {
       expect(component.logout).toHaveBeenCalled();

@@ -4,8 +4,9 @@ import { AlbumsComponent } from './albums.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AlbumsService} from './albums.service';
-import {MatDialogModule, MatIconModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {MatIconModule, MatListModule, MatSidenavModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxImageGalleryModule} from 'ngx-image-gallery';
 
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
@@ -15,7 +16,7 @@ describe('AlbumsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ AlbumsComponent ],
       imports: [ HttpClientModule, RouterTestingModule,
-        BrowserAnimationsModule, MatListModule, MatSidenavModule, MatDialogModule, MatIconModule
+        BrowserAnimationsModule, MatListModule, MatSidenavModule, MatIconModule, NgxImageGalleryModule
       ],
       providers: [AlbumsService]
     })
