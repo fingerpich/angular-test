@@ -7,13 +7,13 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://fingerpich.github.io/angular-test/4.0e8daa2e100e2d7ce618.js",
+        "https://fingerpich.github.io/angular-test/4.047b332faca07f34b78e.js",
         "https://fingerpich.github.io/angular-test/favicon.ico",
         "https://fingerpich.github.io/angular-test/index.html",
-        "https://fingerpich.github.io/angular-test/main.2c497fc864fc30d120bd.js",
+        "https://fingerpich.github.io/angular-test/main.b5505704f5a898ab44b6.js",
         "https://fingerpich.github.io/angular-test/polyfills.c6871e56cb80756a5498.js",
-        "https://fingerpich.github.io/angular-test/runtime.7f475eb071f329110134.js",
-        "https://fingerpich.github.io/angular-test/styles.8270d81ad9a1e8015c41.css"
+        "https://fingerpich.github.io/angular-test/runtime.8878c82a20b53a2de7e6.js",
+        "https://fingerpich.github.io/angular-test/styles.90eb22e4ecc7f4a54221.css"
       ],
       "patterns": []
     },
@@ -36,7 +36,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://fingerpich.github.io/angular-test/4.0e8daa2e100e2d7ce618.js": "7b8984afd3a684f734f45af043cbf2349fb5d2a7",
+    "https://fingerpich.github.io/angular-test/4.047b332faca07f34b78e.js": "2d595330fe787d1556bd6552f6c9322650e9b8c8",
     "https://fingerpich.github.io/angular-test/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "https://fingerpich.github.io/angular-test/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "https://fingerpich.github.io/angular-test/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -46,11 +46,11 @@
     "https://fingerpich.github.io/angular-test/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://fingerpich.github.io/angular-test/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://fingerpich.github.io/angular-test/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://fingerpich.github.io/angular-test/index.html": "10e987a9a8cd41ca2201ab93f6628f51bc5ee14e",
-    "https://fingerpich.github.io/angular-test/main.2c497fc864fc30d120bd.js": "6b62d0c50b180c77d6d1d15d2bd53934b8d6577b",
+    "https://fingerpich.github.io/angular-test/index.html": "1f377d26cf03f60836ed135c26b43cd38c6198ac",
+    "https://fingerpich.github.io/angular-test/main.b5505704f5a898ab44b6.js": "0c9cfda00c22d5c05b4bb8a906a302716c94fbca",
     "https://fingerpich.github.io/angular-test/polyfills.c6871e56cb80756a5498.js": "ce68d153e9b9b6d26b625069c0ee99ae09c6f255",
-    "https://fingerpich.github.io/angular-test/runtime.7f475eb071f329110134.js": "b702b1c1e654fb3dfe7f5c3bd8b70ee07501a7ca",
-    "https://fingerpich.github.io/angular-test/styles.8270d81ad9a1e8015c41.css": "0a62fed2a5e47a5bfcc88d39d968380fbd6143b2"
+    "https://fingerpich.github.io/angular-test/runtime.8878c82a20b53a2de7e6.js": "f684f7e89408a64949fcea6e018166c42b0a823a",
+    "https://fingerpich.github.io/angular-test/styles.90eb22e4ecc7f4a54221.css": "0df7800be2cce5ae26bd275ab76c055a30ab2f6e"
   },
   "navigationUrls": [
     {
