@@ -483,5 +483,3 @@ MIT
 @angular/material/expansion
 
 @angular/material/slide-toggle
-
-@angular/material/dialog
