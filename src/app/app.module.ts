@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule} from '@angular/material';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, M
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule
+    MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
