@@ -4,6 +4,8 @@ import { AlbumsComponent } from './albums.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AlbumsService} from './albums.service';
+import {MatDialogModule, MatIconModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
@@ -12,7 +14,9 @@ describe('AlbumsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AlbumsComponent ],
-      imports: [ HttpClientModule, RouterTestingModule ],
+      imports: [ HttpClientModule, RouterTestingModule,
+        BrowserAnimationsModule, MatListModule, MatSidenavModule, MatDialogModule, MatIconModule
+      ],
       providers: [AlbumsService]
     })
     .compileComponents();

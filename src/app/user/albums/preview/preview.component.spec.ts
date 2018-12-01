@@ -1,32 +1,35 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodosComponent } from './todos.component';
+import { PreviewComponent } from './preview.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
-import {FormsModule} from '@angular/forms';
 import {
-  MatExpansionModule,
-  MatIconModule, MatListModule,
-  MatSlideToggleModule,
+  MAT_DIALOG_DATA,
+  MatDialogModule, MatDialogRef,
+  MatIconModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('PreviewComponent', () => {
+  let component: PreviewComponent;
+  let fixture: ComponentFixture<PreviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodosComponent ],
-      imports: [ HttpClientModule, RouterTestingModule, FormsModule,
-        BrowserAnimationsModule, MatIconModule, MatSlideToggleModule, MatListModule
+      declarations: [ PreviewComponent ],
+      imports: [ HttpClientModule, RouterTestingModule,
+        BrowserAnimationsModule, MatIconModule, MatDialogModule
       ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(PreviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

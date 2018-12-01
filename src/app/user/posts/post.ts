@@ -3,7 +3,5 @@ export interface Post {
   id: number;
   title: string;
   body: string;
-  expanded: boolean;
   comments: Array<Comment>;
-  commentsLoaded: boolean;
 }

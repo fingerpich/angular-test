@@ -5,6 +5,8 @@ import {AuthService} from '../auth/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {User} from '../user/user';
+import {MatButtonModule, MatToolbarModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -14,7 +16,8 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
       providers: [ AuthService ],
-      imports: [ HttpClientModule, RouterTestingModule]
+      imports: [ HttpClientModule, RouterTestingModule,
+        BrowserAnimationsModule, MatToolbarModule, MatButtonModule]
     })
     .compileComponents();
   }));

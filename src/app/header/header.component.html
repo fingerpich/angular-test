@@ -1,12 +1,13 @@
-<div class="header" *ngIf="!!user">
+<mat-toolbar *ngIf="!!user">
   <div class="links">
     <a routerLinkActive="active" routerLink="user/posts">Posts</a>
     <a routerLinkActive="active" routerLink="user/albums">Albums</a>
     <a routerLinkActive="active" routerLink="user/todos">To dos</a>
   </div>
+  <div class="fill-remaining-space"></div>
   <div class="user">
-    <a class="userLink" [href]="user.website">{{user.name}}</a>
+    <a class="userLink" [href]="'//'+user.website">{{user.name}}</a>
     <span>({{user.company.name}})</span>
-    <button class="logout" (click)="logout()">logout</button>
+    <button mat-button="" class="logout" (click)="logout()">logout</button>
   </div>
-</div>
+</mat-toolbar>

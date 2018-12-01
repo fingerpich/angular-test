@@ -1,0 +1,12 @@
+.centered{
+  display: flex;
+  justify-content: center;
+  .searchForm{
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
+.full-width{
+  width: 100%;
+}

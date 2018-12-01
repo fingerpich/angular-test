@@ -1,13 +1,22 @@
-<form>
-  <input (input)="filterPosts($event.target.value)">
-</form>
-
-<div class="Posts">
-  <ul>
-    <li *ngFor="let post of posts;trackBy:trackByFn"  (click)="togglePost(post)">
-      <h1>{{post.title}}</h1>
-      <span *ngIf="post.comments">{{post.comments.length}}</span>
-      <p [class]="post.expanded ? 'expand' : 'collapse'">{{post.body}}</p>
-    </li>
-  </ul>
+<div class="centered">
+  <form class="searchForm">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Search in posts" (input)="filterPosts($event.target.value)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </form>
 </div>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let post of posts;trackBy:trackByFn">
+    <mat-expansion-panel-header (click)="togglePost(post)">
+      <mat-panel-title>
+        {{post.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span *ngIf="post.comments">comments: {{post.comments.length}}</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{post.body}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

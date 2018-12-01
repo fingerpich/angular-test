@@ -1,15 +1,26 @@
-<div class="preview" *ngIf="!!previewPhoto">
-  <img [src]="previewPhoto.url" [alt]="previewPhoto.title">
-</div>
-<div>
-  <ul class="albumList">
-    <li *ngFor="let album of albums" (click)="loadPhotos(album)">
-      {{album.title}}
-    </li>
-  </ul>
-  <ul class="photoList">
-    <li *ngFor="let photo of photos" (click)="previewImage(photo)">
-      <img [src]="photo.thumbnailUrl" [alt]="photo.title">
-    </li>
-  </ul>
-</div>
+<!--<div class="preview" *ngIf="!!previewPhoto">-->
+  <!--<img [src]="previewPhoto.url" [alt]="previewPhoto.title">-->
+<!--</div>-->
+<mat-sidenav-container class="sidenav-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-sidenav mode="side" [(opened)]="opened" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <div class="albumList">
+      <h1>Albums</h1>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let album of albums" (click)="loadPhotos(album)" >
+          <mat-icon>search</mat-icon>
+          <div>{{album.title}}</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-button (click)="this.opened = !this.opened" >Show Albums</button>
+    <div class="image-grid">
+      <div class="image-grid-tile" *ngFor="let photo of photos" (click)="previewImage(photo)">
+        <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

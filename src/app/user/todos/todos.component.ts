@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TodosService} from './todos.service';
 import {Todo} from './todo';
-import {Post} from '../posts/post';
 
 @Component({
   selector: 'app-todos',

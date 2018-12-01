@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import {NgModuleFactoryLoader} from '@angular/core';
 import {UserModule} from './user/user.module';
 import {AuthGuard} from './auth/auth.guard';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
 
 describe('AppComponent', () => {
   let location: Location;
@@ -19,7 +21,8 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes), HttpClientModule, FormsModule],
+      imports: [RouterTestingModule.withRoutes(routes), HttpClientModule, FormsModule,
+        BrowserAnimationsModule, MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule],
       declarations: [
         AppComponent,
         HeaderComponent,

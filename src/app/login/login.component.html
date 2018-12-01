@@ -1,5 +1,20 @@
-<form (ngSubmit)="loginSubmit($event)" #loginForm="ngForm">
-  <input [(ngModel)]="email" name="email" required placeholder="email address" type="email" #formEmail="ngModel">
-  <div [hidden]="formEmail.valid || formEmail.pristine" class="alert alert-danger">Email is required</div>
-  <button [disabled]="!loginForm.valid" type="submit">Login</button>
-</form>
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-subtitle>enter your email to login</mat-card-subtitle>
+  <form (ngSubmit)="loginSubmit($event)" #loginForm="ngForm">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Enter your email" [(ngModel)]="email" name="email" #emailEl="ngModel" required>
+        <mat-error *ngIf="emailEl.invalid">{{'You must enter an email'}}</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button [disabled]="!loginForm.valid" type="submit">Login</button>
+      </div>
+    </mat-card-content>
+  </form>
+  <mat-error *ngIf="error">
+    {{error}}
+  </mat-error>
+</mat-card>
+
+

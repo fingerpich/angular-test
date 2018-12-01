@@ -21,16 +21,12 @@ export class PostsComponent implements OnInit {
   getComments(post: Post) {
     this.postService.getComments(post).subscribe((comments: Array<Comment>) => {
       post.comments = comments;
-      post.expanded = true;
-      post.commentsLoaded = true;
     });
   }
 
   togglePost(post: Post) {
-    if (!post.commentsLoaded) {
+    if (!post.comments) {
       this.getComments(post);
-    } else {
-      post.expanded = !post.expanded;
     }
   }
 

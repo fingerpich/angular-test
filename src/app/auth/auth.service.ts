@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {BehaviorSubject} from 'rxjs';
 import {User} from '../user/user';
+import {tap} from 'rxjs/operators';
 
 const Base_URL =  'https://jsonplaceholder.typicode.com/';
 
@@ -22,14 +23,13 @@ export class AuthService {
   }
 
   login (email: string) {
-    this.http.get(Base_URL + 'users?email=' + email).subscribe((matchUsers: Array<User>) => {
+    return this.http.get(Base_URL + 'users?email=' + email).pipe(tap((matchUsers: Array<User>) => {
       if (matchUsers && matchUsers.length) {
         const userInfo: User = matchUsers[0];
         localStorage.setItem('userInfo', JSON.stringify(userInfo));
         this.loggedInUser.next(userInfo);
-        this.router.navigate(['/user']);
       }
-    });
+    }));
   }
 
   getLoggedInUser() {
